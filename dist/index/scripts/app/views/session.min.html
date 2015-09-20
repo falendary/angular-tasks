@@ -1,0 +1,1 @@
+<div data-ng-controller="sessionController as vm"><div data-ng-if="stayLogged"><h1>Your session created at {{vm.start | date: 'HH:mm:ss'}}</h1><h1>Session will expire at {{vm.end | date: 'HH:mm:ss'}}</h1></div><div data-ng-if="!stayLogged"><h1>You are logged out</h1></div></div>

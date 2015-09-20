@@ -27,7 +27,8 @@
             'node_modules/angular/angular.js',
             'node_modules/angular-animate/angular-animate.js',
             'node_modules/angular-route/angular-route.js',
-            'node_modules/angular-sanitize/angular-sanitize.js'
+            'node_modules/angular-sanitize/angular-sanitize.js',
+            'node_modules/ng-flow/dist/ng-flow-standalone.js'
         ];
 
         return gulp.src(pathToJS)
@@ -153,6 +154,30 @@
             .pipe(gulp.dest('dist/core/scripts/'));
     });
 
+    gulp.task('core-min-libs-JS', function () {
+
+        var pathToJS = [
+            'node_modules/cropper/dist/cropper.js'
+        ];
+
+        return gulp.src(pathToJS)
+            .pipe(concat('libs.min.js'))
+            .pipe(uglify())
+            .pipe(gulp.dest('dist/core/scripts/'));
+    });
+
+    gulp.task('core-min-libs-CSS', function () {
+
+
+        var pathToCSS = ['node_modules/cropper/dist/cropper.css'];
+
+        return gulp.src(pathToCSS)
+            .pipe(concat('libs.min.css'))
+            .pipe(minifyCSS({keepBreaks: false}))
+            .pipe(gulp.dest('dist/core/content/css/'));
+
+    });
+
     gulp.task('Core-min-All', [
         'Core-min-Angular-JS',
         'Core-min-Bootstrap-Fonts',
@@ -162,7 +187,9 @@
         'Core-min-FontAwesome-CSS',
         'Core-min-Angular-UI-JS',
         'Core-min-jQuery-JS',
-        'Core-min-CoreJS-JS'
+        'Core-min-CoreJS-JS',
+        'core-min-libs-JS',
+        'core-min-libs-CSS'
     ]);
 
 }());

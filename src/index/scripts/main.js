@@ -5,11 +5,12 @@
 	require('whatwg-fetch');
 
 	var app = angular.module('app', [
-		'ngSanitize',
 		'ngAnimate',
 		'flow',
+		'ngTable',
 		'ui.router',
-		'ui.bootstrap'
+		'ui.bootstrap',
+		'ngSanitize'
 	]);
 
 	app.config(['$stateProvider', '$urlRouterProvider', require('./app/router')]);
@@ -22,7 +23,7 @@
 	app.controller('notificationsController', [require('./app/controllers/notificationsController')]);
 	app.controller('sessionController', ['$scope', '$modal', require('./app/controllers/sessionController')]);
 	app.controller('shellController', [require('./app/controllers/shellController')]);
-	app.controller('tablesController', [require('./app/controllers/tablesController')]);
+	app.controller('tablesController', ['$scope', 'NgTableParams', require('./app/controllers/tablesController')]);
 	app.controller('vectorMapController', ['$scope', require('./app/controllers/vectorMapController')]);
 	app.controller('modalInstanceController', ['$scope', '$modalInstance', 'timeLeft', require('./app/controllers/modalInstanceController')]);
 

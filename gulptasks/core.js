@@ -29,7 +29,7 @@
             'node_modules/angular-route/angular-route.js',
             'node_modules/angular-sanitize/angular-sanitize.js',
             'node_modules/ng-flow/dist/ng-flow-standalone.js',
-            'node_modules/ng-table/dist/ng-table.js'
+            'node_modules/ng-table/dist/ng-table.min.js'
 
         ];
 
@@ -171,10 +171,13 @@
     gulp.task('core-min-libs-LESS', function () {
 
 
-        var pathToCSS = ['node_modules/cropper/dist/cropper.css'];
+        var pathToLESS = ['node_modules/cropper/dist/cropper.css',
+                         'node_modules/ng-table/dist/ng-table.less'];
 
-        return gulp.src(pathToCSS)
-            .pipe(concat('libs.min.css'))
+        return gulp.src(pathToLESS)
+            .pipe(concat('libs.less'))
+            .pipe(rename({suffix: '.min'}))
+            .pipe(less())
             .pipe(minifyCSS({keepBreaks: false}))
             .pipe(gulp.dest('dist/core/content/css/'));
 
@@ -191,7 +194,7 @@
         'Core-min-jQuery-JS',
         'Core-min-CoreJS-JS',
         'core-min-libs-JS',
-        'core-min-libs-CSS'
+        'core-min-libs-LESS'
     ]);
 
 }());

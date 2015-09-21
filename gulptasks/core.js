@@ -28,7 +28,9 @@
             'node_modules/angular-animate/angular-animate.js',
             'node_modules/angular-route/angular-route.js',
             'node_modules/angular-sanitize/angular-sanitize.js',
-            'node_modules/ng-flow/dist/ng-flow-standalone.js'
+            'node_modules/ng-flow/dist/ng-flow-standalone.js',
+            'node_modules/ng-table/dist/ng-table.js'
+
         ];
 
         return gulp.src(pathToJS)
@@ -166,7 +168,7 @@
             .pipe(gulp.dest('dist/core/scripts/'));
     });
 
-    gulp.task('core-min-libs-CSS', function () {
+    gulp.task('core-min-libs-LESS', function () {
 
 
         var pathToCSS = ['node_modules/cropper/dist/cropper.css'];

@@ -33,7 +33,6 @@
             'node_modules/angular-ui-grid/ui-grid.js',
             'node_modules/angular-simple-logger/dist/angular-simple-logger.js',
             'node_modules/angular-google-maps/dist/angular-google-maps.min.js'
-
         ];
 
         return gulp.src(pathToJS)
@@ -176,7 +175,8 @@
 
         var pathToLESS = ['node_modules/cropper/dist/cropper.css',
             'node_modules/ng-table/dist/ng-table.less',
-            'node_modules/angular-ui-grid/ui-grid.css'];
+            'node_modules/angular-ui-grid/ui-grid.css',
+            'node_modules/angular-toastr/dist/angular-toastr.css'];
 
         return gulp.src(pathToLESS)
             .pipe(concat('libs.less'))

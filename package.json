@@ -57,6 +57,7 @@
     "angular-google-maps": "^2.2.1",
     "angular-sanitize": "^1.4.3",
     "angular-simple-logger": "0.0.2",
+    "angular-toastr": "^1.5.0",
     "angular-ui-bootstrap": "^0.13.2",
     "angular-ui-grid": "^3.0.6",
     "angular-ui-router": "^0.2.15",

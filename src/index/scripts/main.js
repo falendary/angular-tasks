@@ -13,7 +13,9 @@
 		'ui.grid',
 		'ng-fusioncharts',
 		'ngSanitize',
-		'uiGmapgoogle-maps'
+		'uiGmapgoogle-maps',
+		'ngAnimate',
+		'toastr'
 	]);
 
 	app.config(['$stateProvider', '$urlRouterProvider', require('./app/router')]);
@@ -28,7 +30,7 @@
 	app.controller('cropController', ['$scope', require('./app/controllers/cropController')]);
 	app.controller('fusionChartsController', ['$scope', require('./app/controllers/fusionChartsController')]);
 	app.controller('googleMapController', ['$scope', require('./app/controllers/googleMapController')]);
-	app.controller('notificationsController', [require('./app/controllers/notificationsController')]);
+	app.controller('notificationsController', ['$scope', 'toastr', require('./app/controllers/notificationsController')]);
 	app.controller('sessionController', ['$scope', '$modal', require('./app/controllers/sessionController')]);
 	app.controller('shellController', [require('./app/controllers/shellController')]);
 	app.controller('tablesController', ['$scope', 'NgTableParams', require('./app/controllers/tablesController')]);

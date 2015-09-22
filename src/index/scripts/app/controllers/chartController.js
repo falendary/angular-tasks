@@ -4,9 +4,10 @@
 
 	module.exports = function () {
 
-		var vm = this; 
+		var vm = this;
+        console.log('test');
 
-		vm.financialCharts =function () {
+		vm.financialCharts = function () {
 
             var seriesOptions = [],
             seriesCounter = 0,
@@ -83,9 +84,10 @@
                     }
                 });
             });
-        }
+        };
 
-        // vm.financialCharts();
+         vm.financialCharts();
+        console.log('test');
 	}
 
-}())
+}());

@@ -29,7 +29,10 @@
             'node_modules/angular-route/angular-route.js',
             'node_modules/angular-sanitize/angular-sanitize.js',
             'node_modules/ng-flow/dist/ng-flow-standalone.js',
-            'node_modules/ng-table/dist/ng-table.min.js'
+            'node_modules/ng-table/dist/ng-table.min.js',
+            'node_modules/angular-ui-grid/ui-grid.js',
+            'node_modules/angular-simple-logger/dist/angular-simple-logger.js',
+            'node_modules/angular-google-maps/dist/angular-google-maps.min.js'
 
         ];
 
@@ -172,11 +175,13 @@
 
 
         var pathToLESS = ['node_modules/cropper/dist/cropper.css',
-                         'node_modules/ng-table/dist/ng-table.less'];
+            'node_modules/ng-table/dist/ng-table.less',
+            'node_modules/angular-ui-grid/ui-grid.css'];
 
         return gulp.src(pathToLESS)
             .pipe(concat('libs.less'))
             .pipe(rename({suffix: '.min'}))
+            .pipe(replace('../fonts/', '../fonts/bootstrap/'))
             .pipe(less())
             .pipe(minifyCSS({keepBreaks: false}))
             .pipe(gulp.dest('dist/core/content/css/'));
